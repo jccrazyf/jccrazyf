@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="[TOC]  1. 继承与派生1.1 简述 继承是子类得到父类的能力(属性与函数);在基类上建立的新类称为派生类;   子类继承了父类,父类派生了子类.二种不同的说法;   游戏中,人物与终极BOSS有很多相同的地方: 有血量blood &amp;amp; 有武器weapon &amp;amp; 有攻击力ATK;但是也有不一样的地方: 人物有包裹pack, 有血瓶blood vial; Boss有秒杀技seck">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2018/05/05/C++第07课 继承/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="[TOC]  1. 继承与派生1.1 简述 继承是子类得到父类的能力(属性与函数);在基类上建立的新类称为派生类;   子类继承了父类,父类派生了子类.二种不同的说法;   游戏中,人物与终极BOSS有很多相同的地方: 有血量blood &amp;amp; 有武器weapon &amp;amp; 有攻击力ATK;但是也有不一样的地方: 人物有包裹pack, 有血瓶blood vial; Boss有秒杀技seck">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="c:/Users/zzzer000/Documents/Typora/TanZhouEdu/Courseware/C++/7-0.png">
+<meta property="og:updated_time" content="2018-05-05T09:06:26.196Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="[TOC]  1. 继承与派生1.1 简述 继承是子类得到父类的能力(属性与函数);在基类上建立的新类称为派生类;   子类继承了父类,父类派生了子类.二种不同的说法;   游戏中,人物与终极BOSS有很多相同的地方: 有血量blood &amp;amp; 有武器weapon &amp;amp; 有攻击力ATK;但是也有不一样的地方: 人物有包裹pack, 有血瓶blood vial; Boss有秒杀技seck">
+<meta name="twitter:image" content="c:/Users/zzzer000/Documents/Typora/TanZhouEdu/Courseware/C++/7-0.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-C++第07课 继承" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/05/C++第07课 继承/" class="article-date">
+  <time datetime="2018-05-05T10:12:21.555Z" itemprop="datePublished">2018-05-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>[TOC]</p>
+<hr>
+<h1 id="1-继承与派生"><a href="#1-继承与派生" class="headerlink" title="1. 继承与派生"></a><code>1. 继承与派生</code></h1><h2 id="1-1-简述"><a href="#1-1-简述" class="headerlink" title="1.1 简述"></a><code>1.1 简述</code></h2><blockquote>
+<p>继承是子类得到父类的能力(属性与函数);<br>在基类上建立的新类称为派生类;</p>
+</blockquote>
+<blockquote>
+<p>子类继承了父类,父类派生了子类.二种不同的说法;</p>
+</blockquote>
+<blockquote>
+<p>游戏中,人物与终极BOSS有很多相同的地方: 有血量blood &amp; 有武器weapon &amp; 有攻击力ATK;<br>但是也有不一样的地方: 人物有包裹pack, 有血瓶blood vial; Boss有秒杀技seckill skill;</p>
+<p>所以我们可以这样设计:</p>
+<ol>
+<li>父类: 动物animal</li>
+<li>子类: 人类humam   终极BOSS</li>
+</ol>
+</blockquote>
+<h2 id="1-2-声明"><a href="#1-2-声明" class="headerlink" title="1.2 声明"></a><code>1.2 声明</code></h2><blockquote>
+<p>与第三课类的声明相同;</p>
+</blockquote>
+<h2 id="1-3-定义"><a href="#1-3-定义" class="headerlink" title="1.3 定义"></a><code>1.3 定义</code></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class关键字  子类名  :  &lt;派生方式&gt;  父类名1, &lt;派生方式&gt;  父类名2, ... , &lt;派生方式&gt;  父类名n</span><br><span class="line">&#123;</span><br><span class="line">    private:   数据成员/成员函数；</span><br><span class="line">    protected: 数据成员/成员函数；</span><br><span class="line">    public:    数据成员/成员函数</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">1. class关键字;</span><br><span class="line">2. 子类名,最好C开头,再加名字;</span><br><span class="line">3. 冒号;</span><br><span class="line">	4. 派生方式,可省略,默认public;</span><br><span class="line">	5. 父类名</span><br><span class="line">6. 花括号;</span><br><span class="line">7. 成员</span><br><span class="line">8. 分号, 分号, 分号;</span><br></pre></td></tr></table></figure>
+<h2 id="1-4-使用"><a href="#1-4-使用" class="headerlink" title="1.4 使用"></a><code>1.4 使用</code></h2><p>子类继承了父类的所有成员,但是不是任何成员都有访问权限;</p>
+<p>权限与派生方式,成员访问修饰符相关;</p>
+<h1 id="2-派生方式"><a href="#2-派生方式" class="headerlink" title="2. 派生方式"></a><code>2. 派生方式</code></h1><table>
+<thead>
+<tr>
+<th></th>
+<th>父类成员public</th>
+<th>父类成员protected</th>
+<th>父类成员private</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>派生方式public</td>
+<td>public</td>
+<td>protected</td>
+<td>private</td>
+</tr>
+<tr>
+<td>派生方式protected</td>
+<td>protected</td>
+<td>protected</td>
+<td>private</td>
+</tr>
+<tr>
+<td>派生方式private</td>
+<td>private</td>
+<td>private</td>
+<td>private</td>
+</tr>
+</tbody>
+</table>
+<h1 id="3-派生类内存"><a href="#3-派生类内存" class="headerlink" title="3. 派生类内存"></a><code>3. 派生类内存</code></h1><p>其实计算机的一切就是数据,我们类的内存模型是怎样的,子类内存模型又是怎样的.</p>
+<ol>
+<li>一个正常的类内存模型与c语言中的结构体一样的;</li>
+<li>子类的内存模型: 基类内存模型 + 子类的自有内存模型;</li>
+</ol>
+<h1 id="4-虚继承"><a href="#4-虚继承" class="headerlink" title="4. 虚继承"></a><code>4. 虚继承</code></h1><h2 id="4-1-简述"><a href="#4-1-简述" class="headerlink" title="4.1 简述"></a><code>4.1 简述</code></h2><p>当有如下类:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">class A</span><br><span class="line">&#123;</span><br><span class="line">	int m_i;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">class B1 :public A</span><br><span class="line">&#123;</span><br><span class="line">	int m_i;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">class B2 :public A</span><br><span class="line">&#123;</span><br><span class="line">	int m_i;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">class D : public B1, public B2</span><br><span class="line">&#123;</span><br><span class="line">	int m_i;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int i = sizeof(D);		//内存是20字节,说明类A的空间包含了2次,多数时候,这不是我们想要的;</span><br><span class="line"></span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="4-2-声明"><a href="#4-2-声明" class="headerlink" title="4.2 声明"></a><code>4.2 声明</code></h2><p>虚继承: 指定一个指定的基类,在继承体系结构中,将其成员数据实例共享给也从这个基类型直接或间接派生的其它类。</p>
+<p>虚拟继承在一般的应用中很少用到，所以也往往被忽视，这也主要是因为在C++中，多重继承是不推荐的，也并不常用，而一旦离开了多重继承，虚拟继承就完全失去了存在的必要 </p>
+<p>菱形继承:</p>
+<p> <img src="C:\Users\zzzer000\Documents\Typora\TanZhouEdu\Courseware\C++\7-0.png" alt="1525510917206"></p>
+<h2 id="4-3-使用"><a href="#4-3-使用" class="headerlink" title="4.3 使用"></a><code>4.3 使用</code></h2><h1 id="5-作业"><a href="#5-作业" class="headerlink" title="5. 作业"></a><code>5. 作业</code></h1>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/05/05/C++第07课 继承/" data-id="cjgt8d8gg0004xkvt28n3k5re" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/05/05/C++第08课 多态/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/05/05/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/05/05/C++第06课 运算符重载/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/05/C++第06课 运算符重载/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/05/C++第05课 拷贝构造/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/05/C++第05课 拷贝构造/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/05/C++第04课 构造析构/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
